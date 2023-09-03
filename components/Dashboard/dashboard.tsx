@@ -8,7 +8,6 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from "axios";
 export const Dashboard = () => {
 
-const apiUrl=`https://collectionapi.metmuseum.org/public/collection/v1/objects`
 
   const [userInfo, setUserInfo] = useState({ name: "", email: "", phone: "",instagram:"",youtube:""});
   const [infoRetrieved,setInfoRetrieved] = useState(false);
@@ -30,15 +29,18 @@ const apiUrl=`https://collectionapi.metmuseum.org/public/collection/v1/objects`
     setAddNewVisible(!isAddNewVisible);
   };
 
-  useEffect(() => {
 
-    const queryParams = {
-      departmentIds: '3',   
-    };
-    axios.get(apiUrl, { params:queryParams })
+  
+
+  useEffect(() => {
+    const apiUrl=`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=3`
+
+  
+    axios.get(apiUrl)
     .then((response) => {
-      console.log(response.data.objectIDs);
       setDatapoints(response.data.objectIDs);
+      console.log(response.data.objectIDs)
+      console.log(typeof response.data.objectIDs)
       setLoading(false);
     })
     .catch((err) => {
@@ -47,7 +49,7 @@ const apiUrl=`https://collectionapi.metmuseum.org/public/collection/v1/objects`
       setLoading(false);
     });
   }, [])
-  
+
 useEffect(() => {
 const {name,email,phone}=userInfo;
 if(name!="" && email!="" && phone!=""){
@@ -158,7 +160,7 @@ if(name!="" && email!="" && phone!=""){
             <Card />
           </div>
           {/* Chart element */}
-          <Chartcomp datapoints={datapoints} />
+          <Chartcomp />
           {/* Cards different */}
           <div className="mt-2 pt-2 pr-3 mr-2 flex flex-col sm:flex-row justify-evenly">
           <Card2/>  

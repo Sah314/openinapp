@@ -1,31 +1,60 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto'; // Import the Chart.js library
-
-interface ChartData {
-    datapoints: number[]| null | undefined;
-}
+import axios from 'axios';
 
 
-function DoubleBarGraph({ datapoints }: { datapoints: ChartData }) {
-  
+
+
+function DoubleBarGraph() {
+  const [datapoints, setDatapoints] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstanceRef = useRef<Chart | null>(null);
+  const [selectedDatapoints1, setselectedDatapoints1] = useState([]);
+  const [selectedDatapoints2, setselectedDatapoints2] = useState([]);
   
   useEffect(() => {
-    if (canvasRef.current) {
-      // Define your data
+    const apiUrl=`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=3`
+
+  
+    axios.get(apiUrl)
+    .then((response) => {
+      setDatapoints(response.data.objectIDs);
+      console.log(response.data.objectIDs)
+      console.log(typeof response.data.objectIDs)
+      setLoading(false);
+    })
+    .catch((err) => {
+      setError(err);
+      console.log(err);
+      setLoading(false);
+    });
+  }, [])
+
+  
+  
+  useEffect(() => {
+    if (canvasRef.current &&datapoints) {
+      
+      const shuffledDatapoints1 = [...datapoints].sort(() => 0.5 - Math.random());
+    const shuffledDatapoints2 = [...datapoints].sort(() => 0.5 - Math.random());
+    setselectedDatapoints1(shuffledDatapoints1.slice(0, 4));
+    setselectedDatapoints2(shuffledDatapoints2.slice(0, 4));
+
+    console.log(selectedDatapoints1);
       const data = {
         labels: ['Week 1', 'Week 2', 'Week 3','Week 4'],
         datasets: [
           {
             label: 'Dataset 1',
             backgroundColor: '#98D89E',
-            data: [5,35,24,64],
+            data: selectedDatapoints1,
           },
           {
             label: 'Dataset 2',
             backgroundColor: '#EE8484',
-            data: [5, 8, 12,9],
+            data: selectedDatapoints2,
           },
         ],
       };
@@ -67,9 +96,13 @@ function DoubleBarGraph({ datapoints }: { datapoints: ChartData }) {
         });
       }
     }
-  }, []);
-  if (datapoints === null || datapoints === undefined) {
-    return null; // or render some default content or a loading indicator
+  }, [datapoints]);
+
+  if(loading){
+    return (<div>Loading...</div>)
+  }
+  if(error){
+    return(<h1>{error}</h1>);
   }
   return (
     <div className='flex-1 w-full'>
@@ -77,7 +110,7 @@ function DoubleBarGraph({ datapoints }: { datapoints: ChartData }) {
     </div>
   );
 }
-function Chartcomp({ datapoints }: { datapoints: ChartData }) {
+function Chartcomp() {
   return (
     <div className='flex-col rounded-2xl shadow border border-neutral-200 w-full'>
       <div className='my-3 mx-3'>
@@ -98,7 +131,7 @@ function Chartcomp({ datapoints }: { datapoints: ChartData }) {
       </div>
       </div>
       </div>
-      <div className="w-full bg-white flex pr-3 mr-2"> <DoubleBarGraph datapoints={datapoints}/></div>
+      <div className="w-full bg-white flex pr-3 mr-2"> <DoubleBarGraph/></div>
     </div>
      
   )

@@ -1,20 +1,52 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Chart from 'chart.js/auto';
+import axios from 'axios';
+
+
 
 function DonutGraph() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstanceRef = useRef<Chart<'doughnut'> | null>(null);
+  const [datapoints, setDatapoints] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+
+ 
+  useEffect(() => {
+    const apiUrl=`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=3`
+
+  
+    axios.get(apiUrl)
+    .then((response) => {
+      setDatapoints(response.data.objectIDs);
+      console.log(response.data.objectIDs)
+      console.log(typeof response.data.objectIDs)
+      setLoading(false);
+    })
+    .catch((err) => {
+      setError(err);
+      console.log(err);
+      setLoading(false);
+    });
+  }, [])
+
+
 
   useEffect(() => {
-    if (canvasRef.current) {
+    if (canvasRef.current&&datapoints) {
       // Define your data
+      const shuffledDatapoints1 = [...datapoints].sort(() => 0.5 - Math.random());
+      const selectedDatapoints1 = shuffledDatapoints1.slice(0, 3);
+      
+      console.log(selectedDatapoints1);
       const data = {
-        labels: ['Category 1', 'Category 2', 'Category 3', 'Category 4'],
+        labels: ['Category 1', 'Category 2', 'Category 3'],
         datasets: [
           {
             label: 'Dataset 1',
-            backgroundColor: ['#FF5733', '#33FF49', '#338CFF', '#FF33FF'],
-            data: [10, 15, 20, 35],
+            backgroundColor: ['#98D89E', '#F6DC7D', '#EE8484'],
+            data: selectedDatapoints1,
           },
         ],
       };
@@ -52,8 +84,13 @@ function DonutGraph() {
         });
       }
     }
-  }, []);
-
+  }, [datapoints]);
+  if(loading){
+    return (<div>Loading...</div>)
+  }
+  if(error){
+    return(<h1>{error}</h1>);
+  }
   return (
     <div className='w-full'>
         <canvas ref={canvasRef} className='block !w-36 !h-36 !box-border'></canvas>

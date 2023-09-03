@@ -34,7 +34,7 @@ function LoginPage() {
         <div style={{fontFamily:`'Poppins',san-serif`}}>
             <div className='flex flex-col relative sm:flex-row bg-slate-50 overflow-hidden' >
 
-            <div className='hidden sm:block bg-blue-500 sm:absolute sm:inset-0 sm:w-[50%] sm:h-[100vh] sm:z-0' style={{ clipPath: 'polygon(0 0, 100% 0, 70% 100%, 0 100%)'}} >
+            <div className='hidden sm:block bg-blue-500 sm:absolute sm:inset-0 sm:w-[50%] sm:h-[100vh] sm:z-0' style={{ clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0 100%)'}} >
 </div>
 
 
@@ -44,7 +44,7 @@ function LoginPage() {
     <div className="boardcont justify-center items-center flex flex-1 mr-12 pr-12"> <div className='board text-white text-7xl font-bold'>Board.</div></div>
     {/* Center the div with class 'board items-center justify-center' */}
 
-    <div className="flex-2 pr-20 py-3 mr-20 flex flex-row-reverse items-center justify-center">
+    <div className="pr-20 py-4 my-3 mr-20 flex flex-row-reverse items-center justify-center">
     <div className='h-10 w-10 px-3 mx-3 '>
     <svg xmlns="http://www.w3.org/2000/svg"  fill="none">
   <path d="M21.8235 22.3605C21.3695 22.3237 20.9145 22.4192 20.5181 22.6348C20.1216 22.8503 19.8022 23.1757 19.6015 23.5683C19.4009 23.961 19.3285 24.4027 19.3936 24.8356C19.4588 25.2685 19.6587 25.6724 19.9669 25.9944C20.2752 26.3165 20.6776 26.5417 21.1214 26.6406C21.5652 26.7394 22.0297 26.7074 22.4543 26.5486C22.8788 26.3898 23.2435 26.1117 23.5006 25.7506C23.7577 25.3896 23.8953 24.9624 23.8954 24.525C23.9075 24.2523 23.8636 23.9799 23.766 23.7234C23.6684 23.467 23.5192 23.2315 23.3267 23.0305C23.1343 22.8295 22.9025 22.6668 22.6446 22.5519C22.3866 22.4369 22.1076 22.3719 21.8235 22.3605ZM29.2376 22.3605C28.7836 22.3237 28.3286 22.4192 27.9321 22.6348C27.5357 22.8503 27.2162 23.1757 27.0156 23.5683C26.815 23.961 26.7425 24.4027 26.8077 24.8356C26.8729 25.2685 27.0727 25.6724 27.381 25.9944C27.6893 26.3165 28.0916 26.5417 28.5354 26.6406C28.9792 26.7394 29.4438 26.7074 29.8683 26.5486C30.2928 26.3898 30.6575 26.1117 30.9147 25.7506C31.1718 25.3896 31.3094 24.9624 31.3094 24.525C31.3216 24.2523 31.2776 23.9799 31.1801 23.7234C31.0825 23.467 30.9332 23.2315 30.7408 23.0305C30.5484 22.8295 30.3166 22.6668 30.0586 22.5519C29.8007 22.4369 29.5217 22.3719 29.2376 22.3605Z" fill="white"/>
@@ -80,11 +80,44 @@ function LoginPage() {
             <div className="w-full h-5 text-black text-base font-normal px-3">Sign in to your account</div>
             <div className='py-3 my-3'>
             <div className="h-8 relative flex flex-row">
-                    <button className="mx-3 px-3 h-8 flex-1 bg-white rounded-lg text-center text-zinc-500 text-xs font-normal" type='submit' onClick={handleSignin}>Sign in with Google
+                <div className="flex flex-row flex-1 bg-white rounded-lg items-center">
+                    <div className="ico mx-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16.3} fill="none">
+  <g clip-path="url(#clip0_0_170)">
+    <path d="M15.4001 8.116C15.4001 7.48636 15.3478 7.02688 15.2346 6.5504H7.87695V9.39229H12.1957C12.1087 10.0985 11.6385 11.1621 10.5936 11.8768L10.579 11.972L12.9053 13.7331L13.0665 13.7488C14.5467 12.4129 15.4001 10.4474 15.4001 8.116Z" fill="#4285F4"/>
+    <path d="M7.87696 15.6037C9.9928 15.6037 11.7691 14.923 13.0665 13.7488L10.5936 11.8768C9.93187 12.3278 9.04371 12.6426 7.87696 12.6426C5.80464 12.6426 4.04578 11.3068 3.4188 9.4604L3.32689 9.46803L0.907916 11.2974L0.876282 11.3834C2.16495 13.8849 4.81197 15.6037 7.87696 15.6037Z" fill="#34A853"/>
+    <path d="M3.41874 9.4604C3.2533 8.98391 3.15756 8.47335 3.15756 7.94583C3.15756 7.41825 3.2533 6.90775 3.41003 6.43126L3.40565 6.32978L0.95636 4.47101L0.876224 4.50826C0.345103 5.54634 0.0403442 6.71206 0.0403442 7.94583C0.0403442 9.1796 0.345103 10.3453 0.876224 11.3833L3.41874 9.4604Z" fill="#FBBC05"/>
+    <path d="M7.87696 3.24898C9.34847 3.24898 10.3411 3.87011 10.9071 4.38918L13.1187 2.279C11.7604 1.04523 9.9928 0.287949 7.87696 0.287949C4.81197 0.287949 2.16495 2.0067 0.876282 4.50826L3.41009 6.43127C4.04578 4.58487 5.80464 3.24898 7.87696 3.24898Z" fill="#EB4335"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_0_170">
+      <rect width="15.3686" height="15.3686" fill="white" transform="translate(0.0396118 0.287949"/>
+    </clipPath>
+  </defs>
+</svg>
+                    </div>
+                <button className=" mx-3 text-center text-zinc-500 text-xs font-normal" type='submit' onClick={handleSignin}>Sign in with Google
                 </button>
+                </div>
+
+
                 
-                    <button className="mx-3 px-3 h-8 flex-1 bg-white rounded-lg text-center text-zinc-500 text-xs font-normal">Sign in with Apple
+                <div className="flex flex-row flex-1 bg-white rounded-lg items-center">
+                    <div className="ico mx-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+  <g clip-path="url(#clip0_0_178)">
+    <path d="M7.53348 1.52879C8.55093 0.197925 9.96544 0.191437 9.96544 0.191437C9.96544 0.191437 10.1758 1.44268 9.16505 2.64802C8.08578 3.93506 6.85904 3.72446 6.85904 3.72446C6.85904 3.72446 6.62869 2.71225 7.53348 1.52879ZM6.98845 4.60095C7.51188 4.60095 8.48334 3.8869 9.74783 3.8869C11.9244 3.8869 12.7807 5.42395 12.7807 5.42395C12.7807 5.42395 11.106 6.2737 11.106 8.33559C11.106 10.6616 13.1922 11.4632 13.1922 11.4632C13.1922 11.4632 11.7339 15.5368 9.76404 15.5368C8.8593 15.5368 8.15592 14.9317 7.20264 14.9317C6.23118 14.9317 5.26715 15.5594 4.63927 15.5594C2.84051 15.5594 0.568054 11.6952 0.568054 8.58896C0.568054 5.53288 2.49154 3.92971 4.29569 3.92971C5.46855 3.92971 6.3787 4.60095 6.98845 4.60095Z" fill="#999999"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_0_178">
+      <rect width="12.6242" height="15.3686" fill="white" transform="translate(0.568054 0.190186)"/>
+    </clipPath>
+  </defs>
+</svg>
+                    </div>
+                <button className=" mx-3 text-center text-zinc-500 text-xs font-normal" type='submit' onClick={handleSignin}>Sign in with Apple
                 </button>
+                </div>
         </div>
             </div>
             <div className=" px-3 mx-3 h-80 bg-white rounded-2xl flex flex-col">

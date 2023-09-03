@@ -5,11 +5,12 @@ interface ContactFormData{
     youtube:string;
 }
 interface ContactFormProps {
+  handleCard2Click:()=>void;
   switchToBasic: () => void;
   contactformdata:ContactFormData;
   setContactformdata: Dispatch<SetStateAction<ContactFormData>>;
 }
-function ContactForm({switchToBasic,contactformdata,setContactformdata
+function ContactForm({handleCard2Click,switchToBasic,contactformdata,setContactformdata
 }: ContactFormProps) {
 
   const handleFormSubmission = (e: FormEvent<HTMLFormElement>) => {
@@ -32,6 +33,7 @@ function ContactForm({switchToBasic,contactformdata,setContactformdata
       youtube,
   
     }));
+    handleCard2Click();
   };
   const handleBackButtonClick = () => {
     switchToBasic();

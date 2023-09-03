@@ -11,11 +11,12 @@ interface UserInfo{
   youtube:string,
 }
 interface setUserinfoProps{
+  handleCard2Click:()=>void;
   userInfo:UserInfo;
     setUserInfo:Dispatch<SetStateAction<UserInfo>>;
 }
 
-function Addnew({setUserInfo,userInfo}:setUserinfoProps) {
+function Addnew({handleCard2Click,setUserInfo,userInfo}:setUserinfoProps) {
 const [value, setValue] = useState(0);
 const [basicformdata,setBasicformdata] = useState({ name:"",email:"",phone:""});
 const [contactformdata,setContactformdata] = useState({instagram:"",youtube:""}); 
@@ -55,7 +56,7 @@ useEffect(() => {
  {value===0 && <Basicform basicformdata={basicformdata} setBasicformdata={setBasicformdata} switchToContact={switchToContact}/>}
  {value===1 && <ContactForm contactformdata={contactformdata}
   setContactformdata={setContactformdata}
-  switchToBasic={switchToBasic}/>} 
+  switchToBasic={switchToBasic} handleCard2Click={handleCard2Click}/>} 
     </div>
     </div>
 

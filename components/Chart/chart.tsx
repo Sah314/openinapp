@@ -1,20 +1,26 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto'; // Import the Chart.js library
 
-function DoubleBarGraph() {
+interface ChartData {
+    datapoints: number[]| null | undefined;
+}
+
+
+function DoubleBarGraph({ datapoints }: { datapoints: ChartData }) {
+  
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstanceRef = useRef<Chart | null>(null);
-  const api=
+  
   useEffect(() => {
     if (canvasRef.current) {
       // Define your data
       const data = {
-        labels: ['Category 1', 'Category 2', 'Category 3','Category 4'],
+        labels: ['Week 1', 'Week 2', 'Week 3','Week 4'],
         datasets: [
           {
             label: 'Dataset 1',
             backgroundColor: '#98D89E',
-            data: [10, 15, 20,35],
+            data: [5,35,24,64],
           },
           {
             label: 'Dataset 2',
@@ -62,14 +68,16 @@ function DoubleBarGraph() {
       }
     }
   }, []);
-
+  if (datapoints === null || datapoints === undefined) {
+    return null; // or render some default content or a loading indicator
+  }
   return (
     <div className='flex-1 w-full'>
       <canvas ref={canvasRef} className='w-full'></canvas>
     </div>
   );
 }
-function Chartcomp() {
+function Chartcomp({ datapoints }: { datapoints: ChartData }) {
   return (
     <div className='flex-col rounded-2xl shadow border border-neutral-200 w-full'>
       <div className='my-3 mx-3'>
@@ -89,9 +97,8 @@ function Chartcomp() {
         </div>
       </div>
       </div>
-      
       </div>
-      <div className="w-full bg-whit flex pr-3 mr-2"> <DoubleBarGraph/></div>
+      <div className="w-full bg-white flex pr-3 mr-2"> <DoubleBarGraph datapoints={datapoints}/></div>
     </div>
      
   )

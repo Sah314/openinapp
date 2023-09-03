@@ -5,6 +5,8 @@ import Addnew from "../Addnew/addnew";
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from "axios";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+
 export const Dashboard = () => {
 
 
@@ -231,7 +233,7 @@ if(name!="" && email!="" && phone!=""){
           <div className="mt-2 pt-2 pr-3 mr-2 flex flex-col sm:flex-row justify-evenly">
           <Card2/>  
 
-          {(infoRetrieved)&&(<div className="relative h-max flex-1 mt-3 pt-3 sm:ml-3 sm:pl-3" >
+          {(infoRetrieved)&&(<div className="relative h-max flex-1 mt-3 pt-3 sm:ml-3 sm:pl-3 shadow-lg" >
       <div className="w-full h-64 bg-white rounded-2xl shadow border border-neutral-200 flex flex-col">
         <div className="JohnDoe text-black text-2xl font-semibold leading-normal m-3 p-3">{userInfo.name}</div>
           <div className=" grid grid-rows-4 sm:grid-cols-2 sm:gap-8 sm:m-2 sm:p-2">
@@ -282,7 +284,14 @@ if(name!="" && email!="" && phone!=""){
     </div>)}
     
     {(!infoRetrieved)&&(<div className=" relative flex-1 mt-3 pt-3 sm:ml-3 sm:pl-3" >
-      <div className="w-full h-64 bg-white rounded-2xl shadow border border-neutral-200" onClick={handleCard2Click} />
+      <div className="w-full h-64 bg-white rounded-2xl border border-neutral-200 flex flex-col justify-center items-center shadow-lg" onClick={handleCard2Click}  >
+          <div className="icon">
+          <AddCircleOutlineIcon className=" text-9xl text-neutral-300"/>
+          </div>
+          <div>
+          <div className="AddProfile text-zinc-500 text-base font-semibold leading-normal">Add Profile</div>
+          </div>
+      </div>
     </div>)}
           </div>
         </div>

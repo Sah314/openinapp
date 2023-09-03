@@ -112,7 +112,7 @@ function DoubleBarGraph() {
 }
 function Chartcomp() {
   return (
-    <div className='flex-col rounded-2xl shadow border border-neutral-200 w-full'>
+    <div className='flex-col rounded-2xl shadow border border-neutral-200 w-full shadow-lg'>
       <div className='my-3 mx-3'>
       <div className="Activities w-24 text-black text-lg font-bold">Activities</div>
       <div className='flex flex-row justify-between'>

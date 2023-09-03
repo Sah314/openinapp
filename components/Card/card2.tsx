@@ -106,7 +106,7 @@ function DonutGraph() {
 
 function Card2() {
   return (
-    <div className="relative flex-1 mt-3 pt-3" >
+    <div className="relative flex-1 mt-3 pt-3 shadow-lg" >
       <div className="w-full bg-white rounded-2xl shadow border border-neutral-200 flex flex-col">
         <div className="title flex flex-row justify-between m-3 p-3">
         <div className="TopProducts text-black text-lg font-bold">Top products</div>

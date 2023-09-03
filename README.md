@@ -8,7 +8,7 @@
 ![image](https://github.com/Sah314/openinapp/assets/82277915/f2f1888d-ec5b-4487-9aef-efe2b4f382b6)
 ## signup/login
 ![image](https://github.com/Sah314/openinapp/assets/82277915/897a593a-8bac-45b8-af3f-23f3af3c2d71)
-## Click on the Sugn in with google button to sign in using google
+## Click on the Sign in with google button to sign in using google
 ![image](https://github.com/Sah314/openinapp/assets/82277915/2fa18987-8f21-4415-9c96-2261ed18dd4b)
 ## Profile addition
 ![image](https://github.com/Sah314/openinapp/assets/82277915/a5f0d595-89f1-4183-a351-a78cb5087f34)

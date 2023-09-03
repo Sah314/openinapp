@@ -31,7 +31,6 @@ const [selectedDatapoints1, setselectedDatapoints1] = useState([])
   };
 
 
-  
 
   useEffect(() => {
     const apiUrl=`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=3`

@@ -21,8 +21,6 @@ function DoubleBarGraph() {
     axios.get(apiUrl)
     .then((response) => {
       setDatapoints(response.data.objectIDs);
-      console.log(response.data.objectIDs)
-      console.log(typeof response.data.objectIDs)
       setLoading(false);
     })
     .catch((err) => {
@@ -41,8 +39,6 @@ function DoubleBarGraph() {
     const shuffledDatapoints2 = [...datapoints].sort(() => 0.5 - Math.random());
     setselectedDatapoints1(shuffledDatapoints1.slice(0, 4));
     setselectedDatapoints2(shuffledDatapoints2.slice(0, 4));
-
-    console.log(selectedDatapoints1);
       const data = {
         labels: ['Week 1', 'Week 2', 'Week 3','Week 4'],
         datasets: [
@@ -112,7 +108,7 @@ function DoubleBarGraph() {
 }
 function Chartcomp() {
   return (
-    <div className='flex-col rounded-2xl shadow border border-neutral-200 w-full shadow-lg'>
+    <div className='flex-col rounded-2xl border border-neutral-200 w-full shadow-lg'>
       <div className='my-3 mx-3'>
       <div className="Activities w-24 text-black text-lg font-bold">Activities</div>
       <div className='flex flex-row justify-between'>

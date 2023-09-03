@@ -1,3 +1,28 @@
+
+
+
+### Project Documentation
+
+## Images of ui
+## Dashboard
+![image](https://github.com/Sah314/openinapp/assets/82277915/f2f1888d-ec5b-4487-9aef-efe2b4f382b6)
+## signup/login
+![image](https://github.com/Sah314/openinapp/assets/82277915/897a593a-8bac-45b8-af3f-23f3af3c2d71)
+## Click on the Sugn in with google button to sign in using google
+![image](https://github.com/Sah314/openinapp/assets/82277915/2fa18987-8f21-4415-9c96-2261ed18dd4b)
+## Profile addition
+![image](https://github.com/Sah314/openinapp/assets/82277915/a5f0d595-89f1-4183-a351-a78cb5087f34)
+![image](https://github.com/Sah314/openinapp/assets/82277915/a6200a1f-f671-4e9c-a183-2df0cf40a14c)
+![image](https://github.com/Sah314/openinapp/assets/82277915/d23a009e-073a-4348-9299-5eebe94caae7)
+![image](https://github.com/Sah314/openinapp/assets/82277915/483ed634-a498-41b4-be14-b931ddeaecde)
+
+The graph doesnt load in vercel but works perfectly fine in my local machine.
+You can also try to run the code in your local environment.
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -36,30 +61,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-
-
-
-
-
-### Project Documentation
-
-## Images of ui
-## Dashboard
-![image](https://github.com/Sah314/openinapp/assets/82277915/f2f1888d-ec5b-4487-9aef-efe2b4f382b6)
-## signup/login
-![image](https://github.com/Sah314/openinapp/assets/82277915/897a593a-8bac-45b8-af3f-23f3af3c2d71)
-## Click on the Sugn in with google button to sign in using google
-![image](https://github.com/Sah314/openinapp/assets/82277915/2fa18987-8f21-4415-9c96-2261ed18dd4b)
-## Profile addition
-![image](https://github.com/Sah314/openinapp/assets/82277915/a5f0d595-89f1-4183-a351-a78cb5087f34)
-![image](https://github.com/Sah314/openinapp/assets/82277915/a6200a1f-f671-4e9c-a183-2df0cf40a14c)
-![image](https://github.com/Sah314/openinapp/assets/82277915/d23a009e-073a-4348-9299-5eebe94caae7)
-![image](https://github.com/Sah314/openinapp/assets/82277915/483ed634-a498-41b4-be14-b931ddeaecde)
-
-The graph doesnt load in vercel but works perfectly fine in my local machine.
-You can also try to run the code in your local environment.
-
-
-
-

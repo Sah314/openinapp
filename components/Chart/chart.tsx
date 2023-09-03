@@ -100,11 +100,14 @@ function DoubleBarGraph() {
   if(error){
     return(<h1>{error}</h1>);
   }
-  return (
-    <div className='flex-1 w-full'>
-      <canvas ref={canvasRef} className='w-full'></canvas>
-    </div>
-  );
+  if(!loading && !error){
+    return (
+      <div className='flex-1 w-full'>
+        <canvas ref={canvasRef} className='w-full'></canvas>
+      </div>
+    );
+  }
+ 
 }
 function Chartcomp() {
   return (

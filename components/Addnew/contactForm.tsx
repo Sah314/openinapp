@@ -33,8 +33,11 @@ function ContactForm({handleCard2Click,switchToBasic,contactformdata,setContactf
       youtube,
   
     }));
-    handleCard2Click();
+    setTimeout(() => {
+      handleCard2Click();
+    }, 1000);
   };
+ 
   const handleBackButtonClick = () => {
     switchToBasic();
   };

@@ -92,7 +92,7 @@ function DoubleBarGraph() {
         });
       }
     }
-  }, [datapoints]);
+  }, [datapoints,selectedDatapoints1,selectedDatapoints2]);
 
   if(loading){
     return (<div>Loading...</div>)

@@ -271,7 +271,7 @@ if(name!="" && email!="" && phone!=""){
   </g>
   <defs>
     <clipPath id="clip0_5_6407">
-      <rect width="17.5" height="17.5" fill="white" transform="translate(0.25 0.25)"/>
+      <rect width="17.5" height="17.5" fill="white" transform="translate(0.25 ,0.25)"/>
     </clipPath>
   </defs>
 </svg>

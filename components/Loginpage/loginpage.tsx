@@ -32,7 +32,7 @@ function LoginPage() {
 
     return (
         <div style={{fontFamily:`'Poppins',san-serif`}}>
-            <div className='flex flex-col relative sm:flex-row bg-slate-50 overflow-hidden' >
+            <div className='flex relative sm:flex-row bg-slate-50 ' >
 
             <div className='hidden sm:block bg-blue-500 sm:absolute sm:inset-0 sm:w-[50%] sm:h-[100vh] sm:z-0' style={{ clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0 100%)'}} >
 </div>
@@ -73,7 +73,7 @@ function LoginPage() {
 
 
 
-    <div className='flex-1 flex flex-col justify-center items-center w-full sm:w-[50%] h-[100vh]'>
+    <div className='flex-1 flex flex-col justify-center items-center sm:w-[50%] h-[100vh] m-3 p-3 mx-4'>
 
             <div className="mx-4 px-5 container flex flex-col w-[28em] h-[28em]">
             <div className="w-full h-12 text-black text-4xl font-bold px-3">Sign In</div>

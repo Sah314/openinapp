@@ -16,11 +16,11 @@
 ![image](https://github.com/Sah314/openinapp/assets/82277915/d23a009e-073a-4348-9299-5eebe94caae7)
 ![image](https://github.com/Sah314/openinapp/assets/82277915/483ed634-a498-41b4-be14-b931ddeaecde)
 
-The graph doesnt load in vercel but works perfectly fine in my local machine.
-You can also try to run the code in your local environment.
-
-
-
+- For login I have used firebase auth. You can click on login with google for that due to time constraints did not implement other methods.
+- the UI was thanks to the figma design file of this task: https://openinapp.co/fmqjn
+- used tailwindcss for styling, and next.js as the framework with typescript
+- application is fully responsive
+- data for the cards and the charts is fetched from https://collectionapi.metmuseum.org/
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
